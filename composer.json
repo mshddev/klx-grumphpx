@@ -1,0 +1,48 @@
+{
+    "name": "klx/grumphpx",
+    "description": "Kly ComDev GrumPHP Tasks Xtension",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "klx-dev",
+            "email": "sholichul.huda@kly.id"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "nunomaduro/larastan": "^0.4.3",
+        "phpro/grumphp": "^0.16.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Klx\\GrumPhpX\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Klx\\GrumPhpX\\Tests\\": "tests/"
+        }
+    },
+    "suggest": {},
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpunit/phpunit": "^8.4",
+        "phpstan/phpstan": "^0.11.19"
+    },
+    "scripts": {
+
+        "cs:fix": [
+            "@php ./vendor/bin/php-cs-fixer fix --verbose"
+        ],
+        "cs:check": [
+            "@php ./vendor/bin/php-cs-fixer fix --dry-run --verbose"
+        ],
+        "analyse": [
+            "@php ./vendor/bin/phpstan analyse src tests -c phpstan.neon"
+        ],
+        "test": [
+            "@php ./vendor/bin/phpunit"
+        ]
+    }
+}

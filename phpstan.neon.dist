@@ -1,0 +1,6 @@
+parameters:
+    level: 5
+    ignoreErrors:
+        # - '#Call to an undefined method App\\Http\\Resources\\DemoResource::DemoMethod\(\)\.#'
+    excludes_analyse:
+        # - /%currentWorkingDirectory%/*/*/FileToBeExcluded.php
