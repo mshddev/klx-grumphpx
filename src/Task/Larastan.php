@@ -23,10 +23,12 @@ class Larastan extends AbstractExternalTask
     {
         $resolver = new OptionsResolver();
         $resolver->setDefaults([
+            'config' => null,
             'level' => 5,
             'paths' => ['app', 'config', 'tests'],
         ]);
 
+        $resolver->addAllowedTypes('config', ['string']);
         $resolver->addAllowedTypes('level', ['int']);
         $resolver->addAllowedTypes('paths', ['array']);
 
@@ -45,6 +47,10 @@ class Larastan extends AbstractExternalTask
         $arguments = $this->processBuilder->createArgumentsForCommand('php');
         $arguments->add('artisan');
         $arguments->add('code:analyse');
+
+        if ($config['config']) {
+            $arguments->add('--configuration='.$config['config']);
+        }
 
         if ($config['paths']) {
             $arguments->add('--paths='.implode(',', $config['paths']));
