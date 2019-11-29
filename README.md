@@ -24,12 +24,18 @@ Add the task to your `grumphp.yml`
 parameters:
     tasks:
         larastan:
+            config: ~
             paths:
                 - app
                 - config
                 - tests
             level: 5
 ```
+
+**config**
+*Default: `null`*
+
+Custom phpstan.neon config file.  Path to the config file is relative to root project directory.
 
 **paths**
 *Default: `[]`*
