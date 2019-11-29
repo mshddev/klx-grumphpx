@@ -33,16 +33,16 @@
     "scripts": {
 
         "cs:fix": [
-            "@php ./vendor/bin/php-cs-fixer fix --verbose"
+            "@php ./vendor/bin/php-cs-fixer fix --verbose --ansi"
         ],
         "cs:check": [
-            "@php ./vendor/bin/php-cs-fixer fix --dry-run --verbose"
+            "@php ./vendor/bin/php-cs-fixer fix --dry-run --verbose --ansi"
         ],
         "analyse": [
-            "@php ./vendor/bin/phpstan analyse src tests -c phpstan.neon"
+            "@php ./vendor/bin/phpstan analyse src tests -c phpstan.neon --ansi"
         ],
         "test": [
-            "@php ./vendor/bin/phpunit"
+            "@php ./vendor/bin/phpunit --ansi"
         ]
     }
 }
