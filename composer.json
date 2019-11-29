@@ -42,7 +42,7 @@
             "@php ./vendor/bin/phpstan analyse src tests -c phpstan.neon --ansi"
         ],
         "test": [
-            "@php ./vendor/bin/phpunit --ansi"
+            "@php ./vendor/bin/phpunit"
         ]
     }
 }
