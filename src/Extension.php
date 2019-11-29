@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Klx\GrumPhpX;
 
-use GrumPHP\Extension\ExtensionInterface;
 use Klx\GrumPhpX\Task\Larastan;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
+use GrumPHP\Extension\ExtensionInterface;
 use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class Extension implements ExtensionInterface
 {
