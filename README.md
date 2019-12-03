@@ -55,4 +55,3 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Todo
 - add tests
-- add detail contribution guide [CONTRIBUTING](CONTRIBUTING.md) 
