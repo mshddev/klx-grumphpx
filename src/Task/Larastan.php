@@ -40,7 +40,7 @@ class Larastan extends AbstractExternalTask
         return $context instanceof GitPreCommitContext || $context instanceof RunContext;
     }
 
-    public function run(ContextInterface $context) : TaskResultInterface
+    public function run(ContextInterface $context): TaskResultInterface
     {
         $config = $this->getConfiguration();
 
