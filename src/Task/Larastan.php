@@ -49,7 +49,7 @@ class Larastan extends AbstractExternalTask
         $arguments->add('analyse');
 
         if ($config['paths']) {
-            foreach($config['paths'] as $path) {
+            foreach ($config['paths'] as $path) {
                 $arguments->add($path);
             }
         }
