@@ -45,20 +45,24 @@ class Larastan extends AbstractExternalTask
         $config = $this->getConfiguration();
 
         $arguments = $this->processBuilder->createArgumentsForCommand('php');
-        $arguments->add('artisan');
-        $arguments->add('code:analyse');
+        $arguments->add('./vendor/bin/phpstan');
+        $arguments->add('analyse');
+
+        if ($config['paths']) {
+            foreach ($config['paths'] as $path) {
+                $arguments->add($path);
+            }
+        }
 
         if ($config['config']) {
             $arguments->add('--configuration='.getcwd().'/'.$config['config']);
         }
 
-        if ($config['paths']) {
-            $arguments->add('--paths='.implode(',', $config['paths']));
-        }
-
         if ($config['level']) {
             $arguments->add('--level='.$config['level']);
         }
+
+        $arguments->add('--memory-limit=2G');
 
         $process = $this->processBuilder->buildProcess($arguments);
 
