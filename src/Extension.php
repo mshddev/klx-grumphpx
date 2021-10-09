@@ -11,6 +11,11 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class Extension implements ExtensionInterface
 {
+
+    /**
+     * Load function
+     */
+
     public function load(ContainerBuilder $container): void
     {
         $container->register('task.larastan', Larastan::class)
