@@ -14,6 +14,7 @@ class Extension implements ExtensionInterface
 
     /**
      * Load function
+     * Register to container
      */
 
     public function load(ContainerBuilder $container): void
